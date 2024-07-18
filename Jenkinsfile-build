@@ -1,7 +1,6 @@
 pipeline {
-    agent agent1
-    //agent {
-
+    agent {
+        label 'agent1'
         //docker { image 'localhost:9091/mynode:16-alpine'
         //   registryUrl 'http://localhost:9091'
         //   args '-u root:root'
@@ -18,7 +17,7 @@ pipeline {
             registryCredentialsId 'davidchang613-docker-io'
         }
         */
-    //}
+    }
     stages{
         stage('build spring project') {
             steps {
