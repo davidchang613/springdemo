@@ -12,7 +12,7 @@ pipeline {
         
         docker { 
             //image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
-            imag 'davidchang613/javabuildagent'
+            image 'davidchang613/javabuildagent'
             //label 'agent1'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
             registryUrl 'https://registry.hub.docker.com'
