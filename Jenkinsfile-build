@@ -10,7 +10,7 @@ pipeline {
         //}
         
         docker { 
-            image 'davidchang613//agent:jdk17-mvn3.8.6-docker'
+            image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
             registryUrl 'https://registry.hub.docker.com'
             registryCredentialsId 'davidchang613-docker-io'
         }
