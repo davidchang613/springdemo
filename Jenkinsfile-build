@@ -1,0 +1,25 @@
+pipeline {
+   
+    agent {
+        //docker { image 'localhost:9091/mynode:16-alpine'
+        //   registryUrl 'http://localhost:9091'
+        //   args '-u root:root'
+        
+        //docker {
+        //    image 'node:16-alpine'
+        //}
+        
+        docker { 
+            image 'davidchang613//agent:jdk17-mvn3.8.6-docker'
+            registryUrl 'https://registry.hub.docker.com'
+            registryCredentialsId 'davidchang613-docker-io'
+        }
+    }
+    stages{
+        stage('build spring project') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
