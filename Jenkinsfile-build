@@ -26,6 +26,7 @@ pipeline {
         stage('push to docker.io') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'davidchang613-docker-io', usernameVariable: 'username', passwordVariable: 'token')]) {
+                    sh "chmod 666 /var/run/docker.sock"
                     sh "docker build . -f Dockerfile-build -t davidchang613/springdemo:${VERSION}"
                 }
                 
