@@ -11,6 +11,7 @@ pipeline {
         //}
         
         docker { 
+            alwaysPull true
             //image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
             image 'davidchang613/javabuildagent:dind'
             //label 'agent1'
