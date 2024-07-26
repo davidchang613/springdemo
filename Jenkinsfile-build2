@@ -1,17 +1,17 @@
 pipeline {
-    agent none
-    
+    //agent none
+    agent {
+        label 'agent2'
+    }
     stages{
         stage('build spring project') {
-            agent {
-                label 'agent2'
-            }
+            
             steps {
-                sh 'docker --version'
+                sh 'mvn clean package'
             }
         }
         stage('Docker Build') {
-            agent any
+            
             steps {
                 sh "docker version"
                 sh "docker build . -f Dockerfile-build -t davidchang613/springdemo:${VERSION}"
