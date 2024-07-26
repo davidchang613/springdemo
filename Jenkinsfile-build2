@@ -6,7 +6,9 @@ pipeline {
             agent {
                 label 'agent2'
             }
-            
+            steps {
+                sh 'docker --version'
+            }
         }
         stage('Docker Build') {
             agent any
