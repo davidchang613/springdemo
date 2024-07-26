@@ -1,6 +1,6 @@
 FROM amazoncorretto:17.0.7-alpine
 
-RUM mkdir /etc/demo
+RUN mkdir /etc/demo
 
 COPY ./target/demo-0.0.1-SNAPSHOT.jar ./etc/demo
 
