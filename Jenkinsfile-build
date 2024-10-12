@@ -25,7 +25,8 @@ pipeline {
     stages{
         stage('build spring project') {
             steps {
-                sh 'mvn clean package'
+                sh 'ls -l'
+                //sh 'mvn clean package'
             }
         }
         stage('push to docker.io') {
