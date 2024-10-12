@@ -12,8 +12,8 @@ pipeline {
         
         docker { 
             
-            //image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
-            image 'registry.hub.docker.com/davidchang613/javabuildagent2:latest'
+            image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
+            //image 'registry.hub.docker.com/davidchang613/javabuildagent2:latest'
             //label 'dind'
             args '-v /var/run/docker.sock:/var/run/docker.sock'
             //args '-v /var/run/docker.sock:/var/run/docker.sock'
