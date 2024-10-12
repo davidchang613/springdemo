@@ -1,1 +1,32 @@
 
+pipeline {
+    agent and
+    stages{
+        stage('build spring project') {
+            agent {    
+              docker {
+                image 'davidchang613/agent:jdk17-mvn3.8.6-docker'
+            
+                args '-v /var/run/docker.sock:/var/run/docker.sock'
+                registryUrl 'https://registry.hub.docker.com'
+                registryCredentialsId 'davidchang613-docker-io'
+              }
+            }
+            steps {
+                script {
+                    sh 'ls -l'
+                    //sh 'mvn clean package'
+                }
+            }
+        }
+        stage('push to docker.io') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'davidchang613-docker-io', usernameVariable: 'username', passwordVariable: 'token')]) {
+                    sh "docker version"
+                    sh "docker build . -f Dockerfile-build -t davidchang613/springdemo:${VERSION}"
+                }
+                
+            }
+        }
+    }
+}
