@@ -24,8 +24,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'davidchang613-docker-io', usernameVariable: 'username', passwordVariable: 'token')]) {
                     sh "docker version"
                     sh "docker build . -f Dockerfile-build -t davidchang613/springdemo:${VERSION}"
+                    sh "docker push davidchang613/springdemo:${VERSION}"                
                 }
-                
             }
         }
     }
