@@ -15,6 +15,7 @@ pipeline {
             steps {
                 sh "docker version"
                 sh "docker build . -f Dockerfile-build -t davidchang613/springdemo:${VERSION}"
+                sh "docker push davidchang613/springdemo:${VERSION}"
             }
         }
         
