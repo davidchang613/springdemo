@@ -1,0 +1,14 @@
+def map = [:]
+def modules = [:]
+
+pipeline {
+  agent any
+
+  stages {
+    steps {
+      script {
+        modules.lib = load "./jenkins/lib/shared.groovy"
+      }
+    }
+  }
+}
