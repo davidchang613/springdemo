@@ -8,8 +8,8 @@ pipeline {
     stage('load file') {
       steps {
         script {
-          modules.lib = load "shared.groovy"
-          modules.lib.getSelf()
+          modules.shared = load "shared.groovy"
+          modules.shared.getSelf()
         }
       }
     }
