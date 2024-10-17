@@ -5,10 +5,12 @@ pipeline {
   agent any
 
   stages {
-    steps {
-      script {
-        modules.lib = load "./jenkins/lib/shared.groovy"
-        modules.lib.getSelf()
+    stage('load file') {
+      steps {
+        script {
+          modules.lib = load "./jenkins/lib/shared.groovy"
+          modules.lib.getSelf()
+        }
       }
     }
   }
