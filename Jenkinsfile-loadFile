@@ -8,6 +8,7 @@ pipeline {
     steps {
       script {
         modules.lib = load "./jenkins/lib/shared.groovy"
+        modules.lib.getSelf()
       }
     }
   }

@@ -18,3 +18,8 @@ def readVariablesFromFile(String fileName, Map varMap) {
   }
   return varMap
 }
+
+def getSelf() {
+  echo 'shared.groovy'
+  return 'shared.groovy'
+}
