@@ -23,3 +23,5 @@ def getSelf() {
   echo 'shared.groovy'
   return 'shared.groovy'
 }
+
+return this
