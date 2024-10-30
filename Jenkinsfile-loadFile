@@ -11,8 +11,9 @@ pipeline {
           modules.shared = load "./jenkins/lib/shared.groovy"
           modules.shared.getSelf()
 
+          echo 'read config.txt'
           modules.shared.readVariablesFromFile("config.txt", map)
-          echo map['var1']
+          echo map['line1']
         }
       }
     }
